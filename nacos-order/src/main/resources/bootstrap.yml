@@ -1,0 +1,41 @@
+spring:
+  # 指定微服务名称
+  application:
+    name: msc-order
+  profiles:
+    active: dev
+  cloud:
+  # 指定nacos注册中心的地址
+    nacos:
+      config:
+        server-addr: ${nacos.cluster-addr}
+        file-extension: yml
+        namespace: c0709089-f90b-4917-b492-3b39d40e526b   #命名空间  默认 public  如果配置了 public  循环打印clientWork日志， public 默认不配置
+
+nacos:
+  cluster-addr: 127.0.0.1:8848,127.0.0.1:8847,127.0.0.1:8849
+
+
+## 配置日志
+logging:
+  pattern:
+    console: level-%level %msg%n
+  level:
+    root: info
+    com.lhx.nacos: debug
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000 #连接超时时间
+        readTimeout: 5000 #数据读取超时时间
+  compression:
+    request:
+      enabled: true # 请求压缩
+      mime-types: text/xml,application/xml,application/json # 压缩的类型
+      min-request-size: 2048 # 请求最小压缩的阈值
+    response:
+      enabled: true #响应压缩
+      useGzipDecoder: true #使用gzip解码器，解码响应数据
+  circuitbreaker:
+    enabled: true # 配置开启熔断器

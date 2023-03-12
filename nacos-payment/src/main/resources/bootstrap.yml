@@ -1,0 +1,15 @@
+spring:
+  # 指定微服务名称
+  application:
+    name: msc-payment
+  profiles:
+    active: dev
+  cloud:
+  # 指定nacos注册中心的地址
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848,127.0.0.1:8847,127.0.0.1:8849
+        file-extension: yml
+        namespace: c0709089-f90b-4917-b492-3b39d40e526b
+#        namespace: CN                   # 命名空间  默认 public  如果配置了 public  循环打印clientWork日志， public 默认不配置
+#        group: DEFAULT_GROUP            # 分组 默认使用的是 DEFAULT_GROUP 。如果需要自定义自己的 Group，可以通过以下配置来实现：

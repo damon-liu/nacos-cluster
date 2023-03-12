@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="nacos-gateway" />
+        <module name="nacos-payment" />
+        <module name="nacos_common" />
+        <module name="nacos-order" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="nacos-gateway" target="1.8" />
+      <module name="nacos-order" target="1.8" />
+      <module name="nacos-payment" target="1.8" />
+      <module name="nacos_common" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
