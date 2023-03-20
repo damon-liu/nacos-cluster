@@ -67,6 +67,30 @@ spring:
         server-addr: 127.0.0.1:8848,127.0.0.1:8847,127.0.0.1:8849
 ```
 
+启动服务：
+
+![image-20230320030620117](https://damon-study.oss-cn-shenzhen.aliyuncs.com/%20typora/image-20230320030620117.png)
+
+接口测试：http://127.0.0.1:1000/api-payment/payment/1
+
+多次调用返回的执行结果
+
+```json
+{
+    "id": 1,
+    "message": "支付成功，payment{port:8000}{paymentName:damon-dev-cn}"
+}
+
+{
+    "id": 1,
+    "message": "支付成功，payment{port:8001}{paymentName:damon-dev-cn}"
+}
+
+{
+    "id": 1,
+    "message": "支付成功，payment{port:8002}{paymentName:damon-dev-cn}"
+}
+```
 
 
 ## 写在最后
